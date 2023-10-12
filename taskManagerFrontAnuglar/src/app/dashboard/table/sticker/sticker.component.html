@@ -1,0 +1,23 @@
+<div class="sticker-container" cdkDrag>
+  <h2 class="title">
+    <button class="more-btn" [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openSticker()">
+        Open <mat-icon>add_to_queue</mat-icon>
+      </button>
+      <button mat-menu-item (click)="editSticker()">
+        Edit <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-menu-item (click)="removeSticker()">
+        Remove <mat-icon>delete</mat-icon>
+      </button>
+    </mat-menu>
+    {{ stickerData.title }}
+  </h2>
+  <span class="description">{{ stickerData.description }}</span>
+  <div class="date">
+    <span>{{ stickerData.date | date }}</span>
+  </div>
+</div>

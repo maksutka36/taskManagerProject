@@ -1,0 +1,11 @@
+<div class="dialog-container">
+  <h2 class="message">{{ this.data.message }}</h2>
+  <div class="dialog-actions" mat-dialog-actions>
+    <button mat-raised-button cdkFocusInitial [mat-dialog-close]="false">
+      Close
+    </button>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">
+      Confirm
+    </button>
+  </div>
+</div>

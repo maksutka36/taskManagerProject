@@ -1,0 +1,12 @@
+<div class="dialog-container">
+  <title>{{ data.title }}</title>
+  <p>{{ data.description }}</p>
+  <p>{{ data.date }}</p>
+  <p>{{ data.stickerStatus }}</p>
+
+  <div mat-dialog-content>
+    <div class="dialog-actions" mat-dialog-actions>
+      <button mat-raised-button (click)="this.dialogRef.close()">Close</button>
+    </div>
+  </div>
+</div>

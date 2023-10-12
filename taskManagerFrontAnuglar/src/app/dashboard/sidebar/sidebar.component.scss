@@ -1,0 +1,47 @@
+.sidebar {
+  height: 100%;
+  transition: 0.4s;
+  box-shadow: 7px 0px 20px -16px;
+  z-index: 100;
+  position: relative;
+  padding: 8px;
+}
+
+.table {
+  width: 105px;
+  margin-bottom: 8px;
+}
+
+.sidebar-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 180px;
+  transition: 0.4s;
+}
+
+.tables-container {
+  position: relative;
+}
+
+.close-sidebar {
+  width: 64px;
+}
+
+.open-sidebar {
+  width: 180px;
+}
+
+.open-close-btn {
+  float: right;
+}
+
+.open-close-icon {
+  transform: scale(1.8);
+}
+
+:host ::ng-deep .mdc-button .mdc-button__label {
+  word-break: break-all;
+  overflow: hidden;
+  height: 24px;
+}

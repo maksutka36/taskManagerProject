@@ -1,0 +1,12 @@
+.dialog-container {
+  max-width: 90vw;
+  min-width: 70vw;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-actions {
+  justify-content: space-between !important;
+  padding: 0 !important;
+}

@@ -1,0 +1,17 @@
+<div class="column">
+  <h2>{{ name }}</h2>
+
+  <div
+    cdkDropList
+    [cdkDropListData]="column.data"
+    class="list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="list-container">
+      <app-sticker
+        *ngFor="let item of column.data"
+        [stickerData]="item"
+      ></app-sticker>
+    </div>
+  </div>
+</div>

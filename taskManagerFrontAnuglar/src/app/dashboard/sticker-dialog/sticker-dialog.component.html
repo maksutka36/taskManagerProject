@@ -1,0 +1,60 @@
+<div class="dialog-container">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input
+        matInput
+        placeholder="The best title in the world!"
+        formControlName="title"
+      />
+    </mat-form-field>
+
+    <div class="second-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Choose status</mat-label>
+        <mat-select formControlName="stickerStatus">
+          <mat-option value="TODO">To do</mat-option>
+          <mat-option value="GO">In progress</mat-option>
+          <mat-option value="DONE">Done</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Choose a date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          (dateChange)="changeDatePicker()"
+          formControlName="date"
+        />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        placeholder="Ex. It makes me feel..."
+      ></textarea>
+    </mat-form-field>
+  </form>
+  <div class="dialog-actions" mat-dialog-actions>
+    <button mat-raised-button (click)="this.dialogRef.close()">Close</button>
+    <button
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="this.form.getRawValue()"
+      cdkFocusInitial
+      [disabled]="form.invalid"
+    >
+      {{ isEdit ? "Edit sticker" : "Add sticker" }}
+    </button>
+  </div>
+</div>

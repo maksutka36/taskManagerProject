@@ -1,0 +1,29 @@
+<div class="sidebar" [ngClass]="isOpen ? 'open-sidebar' : 'close-sidebar'">
+  <div class="sidebar-container" [ngStyle]="{ 'left.px': isOpen ? 0 : -116 }">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <div class="tables-container" *ngIf="!isLoading">
+      <button
+        class="table"
+        mat-stroked-button
+        (click)="this.addTable()"
+      >
+        +
+      </button>
+      <ng-container *ngFor="let table of tables">
+        <button
+          class="table"
+          [color]="this.currentTable.name === table.name ? 'accent' : ''"
+          mat-raised-button
+          (click)="this.changeTable(table)"
+        >
+          {{ table.name }}
+        </button>
+      </ng-container>
+    </div>
+    <button class="open-close-btn" mat-button (click)="isOpen = !isOpen">
+      <mat-icon class="open-close-icon">{{
+        isOpen ? "keyboard_arrow_left" : "keyboard_arrow_right"
+      }}</mat-icon>
+    </button>
+  </div>
+</div>

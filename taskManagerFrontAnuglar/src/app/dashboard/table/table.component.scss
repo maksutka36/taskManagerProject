@@ -1,0 +1,18 @@
+.table {
+  display: grid;
+  grid-template-columns: calc(100% / 3 - 1rem/3) calc(100% / 3 - 1rem/3) calc(
+      100% / 3 - 1rem/3
+    );
+  gap: 1rem;
+  padding: 2rem;
+}
+
+:host {
+  width: 100%;
+}
+
+
+mat-spinner {
+  margin: auto;
+  margin-top: 4rem;
+}

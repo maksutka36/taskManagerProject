@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  width: 80vw;
+}
+
+.tables-dialog {
+  padding: 1rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-form-field {
+    width: 100%;
+}

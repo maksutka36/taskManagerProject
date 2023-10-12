@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    margin-right: 8px;
+}
+
+mat-spinner {
+    transform:scale(0.4)
+}

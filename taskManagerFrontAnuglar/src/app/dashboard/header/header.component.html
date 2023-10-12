@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" class="header">
+  <mat-spinner color="warn" *ngIf="!this.tableName"></mat-spinner>
+  <span *ngIf="this.tableName">{{ this.tableName.name }}</span>
+  <div>
+    <button
+      mat-raised-button
+      [disabled]="fullTableIsLoading"
+      (click)="addSticker()"
+    >
+      Add sticker
+    </button>
+    <button
+      mat-raised-button
+      [disabled]="fullTableIsLoading"
+      (click)="editTable()"
+    >
+      Edit table
+    </button>
+    <button
+      mat-raised-button
+      [disabled]="fullTableIsLoading"
+      color="warn"
+      (click)="removeTable()"
+    >
+      Remove table
+    </button>
+    <button
+      mat-raised-button
+      [disabled]="!this.stickerService.isSavable"
+      (click)="saveTable()"
+    >
+      Save table
+    </button>
+  </div>
+</mat-toolbar>

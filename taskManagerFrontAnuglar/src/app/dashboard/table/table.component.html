@@ -1,0 +1,15 @@
+<mat-spinner *ngIf="fullTableIsLoading"></mat-spinner>
+<div cdkDropListGroup class="table" *ngIf="!fullTableIsLoading">
+  <app-column
+    [column]="this.stickersService.todo"
+    (columnChange)="drop($event)"
+  ></app-column>
+  <app-column
+    [column]="this.stickersService.go"
+    (columnChange)="drop($event)"
+  ></app-column>
+  <app-column
+    [column]="this.stickersService.done"
+    (columnChange)="drop($event)"
+  ></app-column>
+</div>
